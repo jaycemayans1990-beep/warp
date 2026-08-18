@@ -18,7 +18,7 @@ ScreenGui.Parent = parentGui
 
 -- ตัวแปรระบบ
 local SelectedPlayerName = ""
-local TeleportHeight = 200
+local TeleportHeight = 300
 local FilterMode = "Enemy" -- "All", "Enemy", "Team"
 
 -- REMOTE HANDLER
@@ -288,7 +288,7 @@ TeleportBtn.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
 TeleportBtn.Position = UDim2.new(0.05, 0, 0.72, 0)
 TeleportBtn.Size = UDim2.new(0.9, 0, 0, 35)
 TeleportBtn.Font = Enum.Font.GothamBold
-TeleportBtn.Text = "TELEPORT (100 Studs)"
+TeleportBtn.Text = "TELEPORT (300 Studs)"
 TeleportBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 TeleportBtn.TextSize = 12
 
