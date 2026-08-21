@@ -6,13 +6,13 @@ local Teams = game:GetService("Teams")
 
 -- 1. ลบ UI เก่าทิ้งก่อนรันใหม่
 local parentGui = (gethui and gethui()) or game:GetService("CoreGui") or LocalPlayer:WaitForChild("PlayerGui")
-if parentGui:FindFirstChild("BlazeHubUI") then
+if parentGui:FindFirstChild("GeminiUI") then
     parentGui.BlazeHubNativeUI:Destroy()
 end
 
 -- 2. สร้าง ScreenGui หลัก
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "BlazeHubNativeUI"
+ScreenGui.Name = "GeminiNativeUI"
 ScreenGui.ResetOnSpawn = false
 ScreenGui.Parent = parentGui
 
@@ -96,7 +96,7 @@ local ToggleBtn = Instance.new("TextButton")
 local ToggleCorner = Instance.new("UICorner")
 local ToggleStroke = Instance.new("UIStroke")
 
-ToggleBtn.Name = "BlazeHubToggleBtn"
+ToggleBtn.Name = "GeminiToggleBtn"
 ToggleBtn.Parent = ScreenGui
 ToggleBtn.BackgroundColor3 = Color3.fromRGB(20, 20, 25)
 ToggleBtn.Position = UDim2.new(0.05, 0, 0.2, 0)
@@ -144,7 +144,7 @@ TitleBar.Parent = MainFrame
 TitleBar.BackgroundColor3 = Color3.fromRGB(15, 15, 20)
 TitleBar.Size = UDim2.new(1, 0, 0, 35)
 TitleBar.Font = Enum.Font.GothamBold
-TitleBar.Text = "  BlazeHub Teleport (Team Mode)"
+TitleBar.Text = "  Gemini Teleport (Team Mode)"
 TitleBar.TextColor3 = Color3.fromRGB(255, 255, 255)
 TitleBar.TextSize = 13
 TitleBar.TextXAlignment = Enum.TextXAlignment.Left
@@ -288,7 +288,7 @@ TeleportBtn.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
 TeleportBtn.Position = UDim2.new(0.05, 0, 0.72, 0)
 TeleportBtn.Size = UDim2.new(0.9, 0, 0, 35)
 TeleportBtn.Font = Enum.Font.GothamBold
-TeleportBtn.Text = "TELEPORT (300 Studs)"
+TeleportBtn.Text = "TELEPORT (500 Studs)"
 TeleportBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 TeleportBtn.TextSize = 12
 
