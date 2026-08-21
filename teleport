@@ -18,7 +18,7 @@ ScreenGui.Parent = parentGui
 
 -- ตัวแปรระบบ
 local SelectedPlayerName = ""
-local TeleportHeight = 300
+local TeleportHeight = 500
 local FilterMode = "Enemy" -- "All", "Enemy", "Team"
 
 -- REMOTE HANDLER
