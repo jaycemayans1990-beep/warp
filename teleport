@@ -7,7 +7,7 @@ local Teams = game:GetService("Teams")
 -- 1. ลบ UI เก่าทิ้งก่อนรันใหม่
 local parentGui = (gethui and gethui()) or game:GetService("CoreGui") or LocalPlayer:WaitForChild("PlayerGui")
 if parentGui:FindFirstChild("GeminiUI") then
-    parentGui.BlazeHubNativeUI:Destroy()
+    parentGui.GeminiNativeUI:Destroy()
 end
 
 -- 2. สร้าง ScreenGui หลัก
@@ -102,7 +102,7 @@ ToggleBtn.BackgroundColor3 = Color3.fromRGB(20, 20, 25)
 ToggleBtn.Position = UDim2.new(0.05, 0, 0.2, 0)
 ToggleBtn.Size = UDim2.new(0, 50, 0, 50)
 ToggleBtn.Font = Enum.Font.GothamBold
-ToggleBtn.Text = "BlazeHub"
+ToggleBtn.Text = "Gemini"
 ToggleBtn.TextColor3 = Color3.fromRGB(0, 225, 255)
 ToggleBtn.TextSize = 13
 ToggleBtn.Active = true
