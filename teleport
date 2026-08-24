@@ -1,3 +1,49 @@
+-- ==========================================
+-- SYSTEM CLEANUP (ล้างของเก่าออกให้หมด 100%)
+-- ==========================================
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local LocalPlayer = Players.LocalPlayer
+
+-- 1. ปิด RenderStep กล้องเก่า
+pcall(function() RunService:UnbindFromRenderStep("AimbotCameraUpdate") end)
+
+-- 2. ลบวงกลม Drawing FOV เก่า
+if getgenv().MyScriptFOV then
+    pcall(function() 
+        getgenv().MyScriptFOV.Visible = false
+        getgenv().MyScriptFOV:Remove() 
+    end)
+    getgenv().MyScriptFOV = nil
+end
+
+-- 3. ตัด Event Connections ที่ค้างในระบบทั้งหมด
+if getgenv().MyScriptConnections then
+    for _, conn in ipairs(getgenv().MyScriptConnections) do
+        pcall(function() conn:Disconnect() end)
+    end
+end
+getgenv().MyScriptConnections = {}
+
+-- 4. ลบ ScreenGui เก่าออกทุกโฟลเดอร์ (PlayerGui, CoreGui, HUI)
+local guiNames = {"SnyX_CustomAimbotUI", "IXNativeUI"}
+local searchParents = {
+    LocalPlayer:FindFirstChild("PlayerGui"),
+    game:GetService("CoreGui"),
+    (gethui and gethui())
+}
+
+for _, parent in ipairs(searchParents) do
+    if parent then
+        for _, name in ipairs(guiNames) do
+            local oldUI = parent:FindFirstChild(name)
+            if oldUI then
+                oldUI:Destroy()
+            end
+        end
+    end
+end
+-- ==========================================
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
